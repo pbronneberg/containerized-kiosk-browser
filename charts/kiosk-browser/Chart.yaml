@@ -1,0 +1,8 @@
+apiVersion: v2
+name: kiosk-browser
+description: Explorations on creating a kiosk device, based on an embedded browser executed on a kubernetes based edge device.
+
+type: application
+
+version: 0.1.0
+appVersion: "0.1.0"
