@@ -20,7 +20,10 @@ podSecurityContext:
 
 securityContext:
   privileged: true
-  
+
+termination:
+  gracePeriodSeconds: 1
+
 command:
   override: false
   executable:
