@@ -27,6 +27,12 @@ command:
     - sleep
   args:
     - "10000"
+#  executable:
+#    - cage
+#  args:
+#    - "/opt/app/cefsimple"
+#    - "--"
+#    - "--no-sandbox"
 
 resources:
 #  requests:
