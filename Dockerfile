@@ -12,7 +12,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES=compute,graphics,utility
 
 WORKDIR /opt/app
 
-RUN apt update && apt install -y --no-install-recommends xinit i3 libnss3 \
+RUN apt update && apt install -y --no-install-recommends xorg xinit i3 libnss3 \
     libasound2t64 libdbus-1-3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 \
     libxcomposite1 libxdamage1 libxrandr2 libpango-1.0-0 libcairo2\
     vulkan-tools pciutils mesa-utils\
