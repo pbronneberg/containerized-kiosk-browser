@@ -24,4 +24,4 @@ In case of issues, the browser should restart automatically.
 
 _Note: CEF at this time does not fully support Wayland. Therefore, an X.Org based approach is chosen_
 
-https://faq.i3wm.org/question/4637/solved-how-to-disable-all-default-keybinding.1.html
+Source of inspiration: [I3 Window Manager FAQ](https://faq.i3wm.org/question/4637/solved-how-to-disable-all-default-keybinding.1.html)

@@ -20,6 +20,8 @@ RUN apt update && apt install -y --no-install-recommends xinit i3 libnss3 \
 
 COPY --from=downloader /opt/download/Release .
 COPY .xinitrc /home/ubuntu
-COPY i3.config .
+
+RUN mkdir /opt/app/config
+COPY i3.config /opt/app/config
 
 CMD ["startx"]
