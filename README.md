@@ -13,11 +13,15 @@ In case of issues, the browser should restart automatically.
 
 ## Target environment
 
-* Linux without graphical desktop environment (no X11 / XOrg)
+* Linux without graphical desktop environment (no X11 / XOrg preinstalled)
 * K3s
 * Nvidia GPU
 
 ## Technologies
 
-* [Cage wayland compositor](https://github.com/cage-kiosk/cage): Create a Kiosk to run a single application
-* [Chromium Embedded](https://github.com/chromiumembedded/cef): Fully featured chrome without windows & toolbars
+* [Chromium Embedded (CEF)](https://github.com/chromiumembedded/cef): Fully featured chrome without windows & toolbars
+* [I3 Window Manager](https://i3wm.org/): Simple, tiled X.Org Window Manager with single config-file configurability
+
+_Note: CEF at this time does not fully support Wayland. Therefore, an X.Org based approach is chosen_
+
+https://faq.i3wm.org/question/4637/solved-how-to-disable-all-default-keybinding.1.html
