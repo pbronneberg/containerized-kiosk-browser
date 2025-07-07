@@ -20,6 +20,7 @@ RUN apt update && apt install -y --no-install-recommends xorg xinit i3 libnss3 \
 
 COPY --from=downloader /opt/download/Release .
 COPY .xinitrc /home/ubuntu
+COPY .xinitrc /root
 
 RUN mkdir /opt/app/config
 COPY i3.config /opt/app/config
