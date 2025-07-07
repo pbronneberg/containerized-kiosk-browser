@@ -1,0 +1,1 @@
+exec i3 -c /opt/app/i3.config
