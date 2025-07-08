@@ -1,1 +1,1 @@
-exec i3 -c /opt/app/config/i3.config
+exec i3 -c /opt/afpp/config/i3.config
