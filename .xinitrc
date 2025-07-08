@@ -1,0 +1,1 @@
+exec i3 -c /opt/afpp/config/i3.config

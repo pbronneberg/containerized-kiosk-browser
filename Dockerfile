@@ -8,16 +8,23 @@ RUN tar -xvjf cefsample.tar.bz2 --strip-components=1
 FROM ubuntu:24.04 AS runtime
 
 ARG DEBIAN_FRONTEND=noninteractive
-ENV NVIDIA_DRIVER_CAPABILITIES compute,graphics,utility
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,graphics,utility
 
-WORKDIR /opt/app
-RUN apt update && apt install -y --no-install-recommends cage libnss3 \
+RUN apt update && apt install -y --no-install-recommends xorg xinit i3 libnss3 \
     libasound2t64 libdbus-1-3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 \
-    libxcomposite1 libxdamage1 libpango-1.0-0 libcairo2\
+    libxcomposite1 libxdamage1 libxrandr2 libpango-1.0-0 libcairo2\
     vulkan-tools pciutils mesa-utils\
     && rm -rf /var/lib/apt/lists/*
 
-COPY nvidia_icd.json /etc/vulkan/icd.d
+COPY .xinitrc /root
 
+USER ubuntu
+COPY .xinitrc /home/ubuntu
+
+WORKDIR /opt/app
 COPY --from=downloader /opt/download/Release .
-CMD ["cage", "/opt/app/cefsimple", "--", "--no-sandbox"]
+
+RUN mkdir /opt/app/config
+COPY i3.config /opt/app/config
+
+CMD ["startx"]

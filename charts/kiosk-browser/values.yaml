@@ -25,17 +25,11 @@ termination:
   gracePeriodSeconds: 1
 
 command:
-  override: false
+  override: true
   executable:
     - sleep
   args:
     - "10000"
-#  executable:
-#    - cage
-#  args:
-#    - "/opt/app/cefsimple"
-#    - "--"
-#    - "--no-sandbox"
 
 resources:
   requests:

@@ -52,7 +52,9 @@ spec:
           {{- toYaml .args | nindent 12 }}
           {{- end }}
           {{- end }}
-
+          volumeMounts:
+            - name: i3-config-volume
+              mountPath: /opt/app/config
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
@@ -80,4 +82,8 @@ spec:
       {{- if .Values.runtimeClassName }}
       runtimeClassName: {{ .Values.runtimeClassName }}
       {{- end }}
+      volumes:
+        - name: i3-config-volume
+          configMap:
+            name: i3-config
   
